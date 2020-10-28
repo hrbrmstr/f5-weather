@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B0E7B2549EF5E007385A6 /* emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E792549EF5E007385A6 /* emoji.swift */; };
+		010B0E7C2549EF5E007385A6 /* string+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E7A2549EF5E007385A6 /* string+emoji.swift */; };
 		015AB416254993C200AB0EF9 /* blahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB415254993C200AB0EF9 /* blahApp.swift */; };
 		015AB418254993C200AB0EF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB417254993C200AB0EF9 /* ContentView.swift */; };
 		015AB41A254993C200AB0EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AB419254993C200AB0EF9 /* Assets.xcassets */; };
 		015AB41D254993C200AB0EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AB41C254993C200AB0EF9 /* Preview Assets.xcassets */; };
+		015AB4272549943B00AB0EF9 /* json-utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB4262549943B00AB0EF9 /* json-utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010B0E792549EF5E007385A6 /* emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emoji.swift; sourceTree = "<group>"; };
+		010B0E7A2549EF5E007385A6 /* string+emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string+emoji.swift"; sourceTree = "<group>"; };
 		015AB412254993C100AB0EF9 /* blah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015AB415254993C200AB0EF9 /* blahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blahApp.swift; sourceTree = "<group>"; };
 		015AB417254993C200AB0EF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -21,6 +26,7 @@
 		015AB41C254993C200AB0EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		015AB41E254993C200AB0EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		015AB41F254993C200AB0EF9 /* blah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = blah.entitlements; sourceTree = "<group>"; };
+		015AB4262549943B00AB0EF9 /* json-utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "json-utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 		015AB414254993C100AB0EF9 /* blah */ = {
 			isa = PBXGroup;
 			children = (
+				010B0E792549EF5E007385A6 /* emoji.swift */,
+				010B0E7A2549EF5E007385A6 /* string+emoji.swift */,
+				015AB4262549943B00AB0EF9 /* json-utils.swift */,
 				015AB415254993C200AB0EF9 /* blahApp.swift */,
 				015AB417254993C200AB0EF9 /* ContentView.swift */,
 				015AB419254993C200AB0EF9 /* Assets.xcassets */,
@@ -142,6 +151,9 @@
 			files = (
 				015AB418254993C200AB0EF9 /* ContentView.swift in Sources */,
 				015AB416254993C200AB0EF9 /* blahApp.swift in Sources */,
+				010B0E7B2549EF5E007385A6 /* emoji.swift in Sources */,
+				015AB4272549943B00AB0EF9 /* json-utils.swift in Sources */,
+				010B0E7C2549EF5E007385A6 /* string+emoji.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +286,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"blah/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = NO;
 				INFOPLIST_FILE = blah/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,7 +310,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"blah/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = NO;
 				INFOPLIST_FILE = blah/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

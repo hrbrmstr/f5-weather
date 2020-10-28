@@ -11,7 +11,7 @@ import SwiftUI
 struct blahApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          ContentView().navigationTitle("F5 Weather • ECMWF • Berwick, Maine")
         }
     }
 }
