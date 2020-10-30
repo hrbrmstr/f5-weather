@@ -31,6 +31,7 @@
 		015AB41F254993C200AB0EF9 /* f5-weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "f5-weather.entitlements"; sourceTree = "<group>"; };
 		015AB4262549943B00AB0EF9 /* json-utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "json-utils.swift"; sourceTree = "<group>"; };
 		01B59D5B254C660E00D6F5ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01B59D62254C7D5A00D6F5ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		015AB409254993C100AB0EF9 = {
 			isa = PBXGroup;
 			children = (
+				01B59D62254C7D5A00D6F5ED /* README.md */,
 				015AB414254993C100AB0EF9 /* f5-weather */,
 				015AB413254993C100AB0EF9 /* Products */,
 			);
