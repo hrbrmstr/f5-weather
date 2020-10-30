@@ -1,9 +1,6 @@
-//
-//  json-utils.swift
-//  xyz
-//
-//  Created by hrbrmstr on 10/6/20.
-//
+// https://www.hackingwithswift.com/articles/55/how-to-use-dynamic-member-lookup-in-swift
+
+// this makes working with deserialized JSON a bit more like scripting languages
 
 import Foundation
 

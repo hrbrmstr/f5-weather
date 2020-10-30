@@ -1,27 +1,37 @@
-//
-//  globals.swift
-//  blah
-//
-//  Created by hrbrmstr on 10/28/20.
-//
-
 import Foundation
 import SwiftUI
 import os
 
-let DOMAIN_MIN: Double = 0
-let DOMAIN_MAX: Double = 300
+// min and max range for forecast temp line size
+let RANGE_MIN: Double = 0
+let RANGE_MAX: Double = 300
+
+// height for each row element component
 let HEIGHT: CGFloat = 20
 
+// fixed view width and min height of the view
+let VIEW_WIDTH: CGFloat = 548
+let VIEW_MIN_HEIGHT: CGFloat = 256
+
+// max possible rows from forecast and the height of each row (including padding)
+let MAX_ROWS: Int = 20
+let ROW_HEIGHT: Int = 30
+
+// width of a char (not great to hardcode this)
+let CHAR_WIDTH: CGFloat = 12
+
+// we will log some things
 let logger = Logger()
 
-let etab: [String: String] = [
+// assoc array to map conditions to SF Symbols
+let conditionToSymbol: [String: String] = [
   "Rain" : "cloud.rain.fill",
   "Snow" : "cloud.snow.fill",
   "Clear" : "sun.max.fill"
 ]
 
-let ecol: [String: Color] = [
+// assoc array to map conditions to the highlight color they should have
+let conditionToSymbolColor: [String: Color] = [
   "Rain" : Color.blue,
   "Snow" : Color.blue,
   "Clear" : Color.yellow

@@ -22,5 +22,7 @@
 	<string>public.app-category.weather</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>ForecastURL</key>
+	<string>https://rud.is/f5wx/conditions.json</string>
 </dict>
 </plist>
