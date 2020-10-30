@@ -17,7 +17,7 @@ struct DayView: View {
       
       Text(dayCast.day.split(separator: " ")[0])
         .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center) // Day
-      
+
       Text(dayCast.day.split(separator: " ")[1])
         .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center) // ##/##
       
@@ -26,7 +26,9 @@ struct DayView: View {
         .font(.title3) // a bit bigger than body
         .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center)
         .foregroundColor(conditionToSymbolColor[dayCast.condition, default: Color.yellow]) // change higlight color depending on the condition
-      
+        .accessibility(label: Text(dayCast.condition))
+        .help(dayCast.condition)
+
       Spacer() // space before first temp label
         .frame(
         width: CGFloat(dayCast.low.rescale(from: self.minTemp...self.maxTemp, to: RANGE_MIN...RANGE_MAX)-0),
@@ -90,7 +92,7 @@ struct ContentView: View {
       idealWidth: VIEW_WIDTH,
       maxWidth: VIEW_WIDTH,
       minHeight: VIEW_MIN_HEIGHT,
-      idealHeight: CGFloat((model.forecast.count > 0 ? model.forecast.count : MAX_ROWS) * ROW_HEIGHT), // dynamically resize window based on the number of forecast day lines we have
+      idealHeight: CGFloat((model.forecast.count > 0 ? model.forecast.count : MIN_ROWS) * ROW_HEIGHT), // dynamically resize window based on the number of forecast day lines we have
       maxHeight: CGFloat(MAX_ROWS * ROW_HEIGHT)
     )
     .alert(

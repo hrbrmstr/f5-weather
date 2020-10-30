@@ -13,7 +13,8 @@ let HEIGHT: CGFloat = 20
 let VIEW_WIDTH: CGFloat = 548
 let VIEW_MIN_HEIGHT: CGFloat = 256
 
-// max possible rows from forecast and the height of each row (including padding)
+// min & max possible rows from forecast and the height of each row (including padding)
+let MIN_ROWS: Int = 10
 let MAX_ROWS: Int = 20
 let ROW_HEIGHT: Int = 30
 
