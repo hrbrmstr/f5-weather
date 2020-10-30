@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010B0E7B2549EF5E007385A6 /* emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E792549EF5E007385A6 /* emoji.swift */; };
-		010B0E7C2549EF5E007385A6 /* string+emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E7A2549EF5E007385A6 /* string+emoji.swift */; };
-		015AB416254993C200AB0EF9 /* blahApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB415254993C200AB0EF9 /* blahApp.swift */; };
+		010B0E802549F642007385A6 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E7F2549F642007385A6 /* utils.swift */; };
+		010B0E832549F65E007385A6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E822549F65E007385A6 /* model.swift */; };
+		010B0E862549F6A6007385A6 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B0E852549F6A6007385A6 /* globals.swift */; };
+		015AB416254993C200AB0EF9 /* f5wxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB415254993C200AB0EF9 /* f5wxApp.swift */; };
 		015AB418254993C200AB0EF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AB417254993C200AB0EF9 /* ContentView.swift */; };
 		015AB41A254993C200AB0EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AB419254993C200AB0EF9 /* Assets.xcassets */; };
 		015AB41D254993C200AB0EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AB41C254993C200AB0EF9 /* Preview Assets.xcassets */; };
@@ -17,15 +18,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		010B0E792549EF5E007385A6 /* emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emoji.swift; sourceTree = "<group>"; };
-		010B0E7A2549EF5E007385A6 /* string+emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string+emoji.swift"; sourceTree = "<group>"; };
-		015AB412254993C100AB0EF9 /* blah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blah.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		015AB415254993C200AB0EF9 /* blahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blahApp.swift; sourceTree = "<group>"; };
+		010B0E7F2549F642007385A6 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		010B0E822549F65E007385A6 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		010B0E852549F6A6007385A6 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
+		015AB412254993C100AB0EF9 /* F5 Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "F5 Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		015AB415254993C200AB0EF9 /* f5wxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = f5wxApp.swift; sourceTree = "<group>"; };
 		015AB417254993C200AB0EF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		015AB419254993C200AB0EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015AB41C254993C200AB0EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		015AB41E254993C200AB0EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		015AB41F254993C200AB0EF9 /* blah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = blah.entitlements; sourceTree = "<group>"; };
+		015AB41F254993C200AB0EF9 /* f5-weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "f5-weather.entitlements"; sourceTree = "<group>"; };
 		015AB4262549943B00AB0EF9 /* json-utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "json-utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +45,7 @@
 		015AB409254993C100AB0EF9 = {
 			isa = PBXGroup;
 			children = (
-				015AB414254993C100AB0EF9 /* blah */,
+				015AB414254993C100AB0EF9 /* f5-weather */,
 				015AB413254993C100AB0EF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,25 +53,26 @@
 		015AB413254993C100AB0EF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				015AB412254993C100AB0EF9 /* blah.app */,
+				015AB412254993C100AB0EF9 /* F5 Weather.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		015AB414254993C100AB0EF9 /* blah */ = {
+		015AB414254993C100AB0EF9 /* f5-weather */ = {
 			isa = PBXGroup;
 			children = (
-				010B0E792549EF5E007385A6 /* emoji.swift */,
-				010B0E7A2549EF5E007385A6 /* string+emoji.swift */,
 				015AB4262549943B00AB0EF9 /* json-utils.swift */,
-				015AB415254993C200AB0EF9 /* blahApp.swift */,
+				015AB415254993C200AB0EF9 /* f5wxApp.swift */,
 				015AB417254993C200AB0EF9 /* ContentView.swift */,
 				015AB419254993C200AB0EF9 /* Assets.xcassets */,
 				015AB41E254993C200AB0EF9 /* Info.plist */,
-				015AB41F254993C200AB0EF9 /* blah.entitlements */,
+				015AB41F254993C200AB0EF9 /* f5-weather.entitlements */,
 				015AB41B254993C200AB0EF9 /* Preview Content */,
+				010B0E7F2549F642007385A6 /* utils.swift */,
+				010B0E822549F65E007385A6 /* model.swift */,
+				010B0E852549F6A6007385A6 /* globals.swift */,
 			);
-			path = blah;
+			path = "f5-weather";
 			sourceTree = "<group>";
 		};
 		015AB41B254993C200AB0EF9 /* Preview Content */ = {
@@ -83,9 +86,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		015AB411254993C100AB0EF9 /* blah */ = {
+		015AB411254993C100AB0EF9 /* F5 Weather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 015AB422254993C200AB0EF9 /* Build configuration list for PBXNativeTarget "blah" */;
+			buildConfigurationList = 015AB422254993C200AB0EF9 /* Build configuration list for PBXNativeTarget "F5 Weather" */;
 			buildPhases = (
 				015AB40E254993C100AB0EF9 /* Sources */,
 				015AB40F254993C100AB0EF9 /* Frameworks */,
@@ -95,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = blah;
+			name = "F5 Weather";
 			productName = blah;
-			productReference = 015AB412254993C100AB0EF9 /* blah.app */;
+			productReference = 015AB412254993C100AB0EF9 /* F5 Weather.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 015AB40D254993C100AB0EF9 /* Build configuration list for PBXProject "blah" */;
+			buildConfigurationList = 015AB40D254993C100AB0EF9 /* Build configuration list for PBXProject "F5 Weather" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				015AB411254993C100AB0EF9 /* blah */,
+				015AB411254993C100AB0EF9 /* F5 Weather */,
 			);
 		};
 /* End PBXProject section */
@@ -150,10 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				015AB418254993C200AB0EF9 /* ContentView.swift in Sources */,
-				015AB416254993C200AB0EF9 /* blahApp.swift in Sources */,
-				010B0E7B2549EF5E007385A6 /* emoji.swift in Sources */,
+				015AB416254993C200AB0EF9 /* f5wxApp.swift in Sources */,
+				010B0E802549F642007385A6 /* utils.swift in Sources */,
+				010B0E862549F6A6007385A6 /* globals.swift in Sources */,
 				015AB4272549943B00AB0EF9 /* json-utils.swift in Sources */,
-				010B0E7C2549EF5E007385A6 /* string+emoji.swift in Sources */,
+				010B0E832549F65E007385A6 /* model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,20 +284,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = blah/blah.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "f5-weather/f5-weather.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"blah/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"f5-weather/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = NO;
-				INFOPLIST_FILE = blah/Info.plist;
+				INFOPLIST_FILE = "f5-weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = is.rud.blah;
+				PRODUCT_BUNDLE_IDENTIFIER = "is.rud.f5-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -304,20 +308,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = blah/blah.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "f5-weather/f5-weather.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"blah/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"f5-weather/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = NO;
-				INFOPLIST_FILE = blah/Info.plist;
+				INFOPLIST_FILE = "f5-weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = is.rud.blah;
+				PRODUCT_BUNDLE_IDENTIFIER = "is.rud.f5-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -326,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		015AB40D254993C100AB0EF9 /* Build configuration list for PBXProject "blah" */ = {
+		015AB40D254993C100AB0EF9 /* Build configuration list for PBXProject "F5 Weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				015AB420254993C200AB0EF9 /* Debug */,
@@ -335,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		015AB422254993C200AB0EF9 /* Build configuration list for PBXNativeTarget "blah" */ = {
+		015AB422254993C200AB0EF9 /* Build configuration list for PBXNativeTarget "F5 Weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				015AB423254993C200AB0EF9 /* Debug */,

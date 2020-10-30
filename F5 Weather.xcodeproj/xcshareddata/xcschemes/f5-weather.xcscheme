@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "015AB411254993C100AB0EF9"
-               BuildableName = "blah.app"
-               BlueprintName = "blah"
-               ReferencedContainer = "container:blah.xcodeproj">
+               BuildableName = "F5 Weather.app"
+               BlueprintName = "F5 Weather"
+               ReferencedContainer = "container:F5 Weather.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "015AB411254993C100AB0EF9"
-            BuildableName = "blah.app"
-            BlueprintName = "blah"
-            ReferencedContainer = "container:blah.xcodeproj">
+            BuildableName = "F5 Weather.app"
+            BlueprintName = "F5 Weather"
+            ReferencedContainer = "container:F5 Weather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "015AB411254993C100AB0EF9"
-            BuildableName = "blah.app"
-            BlueprintName = "blah"
-            ReferencedContainer = "container:blah.xcodeproj">
+            BuildableName = "F5 Weather.app"
+            BlueprintName = "F5 Weather"
+            ReferencedContainer = "container:F5 Weather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
