@@ -1,9 +1,12 @@
 import SwiftUI
 
+
 // MARK: The view for each day row
 
 struct DayView: View {
   
+  @Environment(\.colorScheme) var colorScheme
+
   let dayCast: F5DayCast
   let minTemp: Double
   let maxTemp: Double
@@ -16,31 +19,38 @@ struct DayView: View {
     HStack {
       
       Text(dayCast.day.split(separator: " ")[0])
-        .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center) // Day
-
-      Text(dayCast.day.split(separator: " ")[1])
-        .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center) // ##/##
+        .frame(width: 3*CHAR_WIDTH, height: CGFloat(ROW_HEIGHT), alignment: .center) // Day
       
-      Image(systemName: conditionToSymbol[dayCast.condition, default: "sun.max.fill"]) // icon
+      Text(dayCast.day.split(separator: " ")[1])
+        .frame(width: 3*CHAR_WIDTH, height: CGFloat(ROW_HEIGHT), alignment: .center) // ##/##
+      
+      Image(systemName: colorScheme == .dark ? conditionToSymbol[dayCast.condition, default: "sun.max.fill"] :
+              conditionToSymbolLight[dayCast.condition, default: "sun.max"]) // icon
         .renderingMode(.original) // enables color
         .font(.title3) // a bit bigger than body
-        .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .center)
+        .fixedSize()
+        .frame(alignment: .leading)
         .foregroundColor(conditionToSymbolColor[dayCast.condition, default: Color.yellow]) // change higlight color depending on the condition
         .accessibility(label: Text(dayCast.condition))
         .help(dayCast.condition)
+      
+      Spacer()
+        .frame(width: CHAR_WIDTH, height: CGFloat(ROW_HEIGHT))
 
       Spacer() // space before first temp label
         .frame(
-        width: CGFloat(dayCast.low.rescale(from: self.minTemp...self.maxTemp, to: RANGE_MIN...RANGE_MAX)-0),
-        height: HEIGHT,
-        alignment: .leading
-      )
+          width: CGFloat(dayCast.low.rescale(from: self.minTemp...self.maxTemp, to: RANGE_MIN...RANGE_MAX)-0),
+          height: CGFloat(ROW_HEIGHT),
+          alignment: .leading
+        )
       
       Text(String(format: "%.f°",  dayCast.low)) // ##°
-        .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .trailing)
+        .fixedSize()
+        .frame(alignment: .leading)
       
       Spacer() // small space before temperature line
-        .frame(width: CHAR_WIDTH, height: HEIGHT, alignment: .leading)
+        .fixedSize()
+        .frame(alignment: .leading)
       
       GeometryReader { g in // temperature line (=================)
         Path { path in
@@ -49,22 +59,25 @@ struct DayView: View {
           path.move(to: CGPoint(x: 0, y: h/2))
           path.addLine(to: CGPoint(x:w, y: h/2))
         }
-        .stroke(style: StrokeStyle(lineWidth: HEIGHT/2, lineCap: .round))
+        .stroke(style: StrokeStyle(lineWidth: CGFloat(ROW_HEIGHT)/2, lineCap: .round))
         .foregroundColor(Color.primary)
         
       }.frame(
         width: CGFloat(dayCast.high.rescale(from: self.minTemp...self.maxTemp, to: RANGE_MIN...RANGE_MAX) -
                         dayCast.low.rescale(from: self.minTemp...self.maxTemp, to: RANGE_MIN...RANGE_MAX)),
-        height: HEIGHT,
+        height: CGFloat(ROW_HEIGHT),
         alignment: .leading
       )
       
       Spacer() // small space after temperature line
-        .frame(width: CHAR_WIDTH, height: HEIGHT, alignment: .leading)
+        .fixedSize()
+        .frame(alignment: .leading)
       
       Text(String(format: "%.f°",  dayCast.high)) // ##°
-        .frame(width: 3*CHAR_WIDTH, height: HEIGHT, alignment: .leading)
+        .fixedSize()
+        .frame(alignment: .leading)
     }
+    .fixedSize()
     
   }
   
@@ -87,13 +100,16 @@ struct ContentView: View {
         }
       }
     }
+    .onReceive(NotificationCenter.default.publisher(for: NSApplication.willBecomeActiveNotification)) { _ in
+      model.getForecast()
+    }
     .frame(
       minWidth: VIEW_WIDTH,
       idealWidth: VIEW_WIDTH,
       maxWidth: VIEW_WIDTH,
       minHeight: VIEW_MIN_HEIGHT,
-      idealHeight: CGFloat((model.forecast.count > 0 ? model.forecast.count : MIN_ROWS) * ROW_HEIGHT), // dynamically resize window based on the number of forecast day lines we have
-      maxHeight: CGFloat(MAX_ROWS * ROW_HEIGHT)
+      idealHeight: CGFloat((model.forecast.count > 0 ? model.forecast.count : MIN_ROWS) * (ROW_HEIGHT + INSETS) + 2*INSETS), // dynamically resize window based on the number of forecast day lines we have
+      maxHeight: CGFloat(MAX_ROWS * (ROW_HEIGHT + INSETS) + 2*INSETS)
     )
     .alert(
       isPresented: $model.showAlert,

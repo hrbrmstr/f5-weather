@@ -9,7 +9,7 @@ struct F5DayCast: Identifiable {
   var high: Double = 0.0 // e.g. 53
   var condition: String = "" // e.g. "Clear"
   
-}
+} 
 
 // MARK: The core model for the application
 class AppModel: ObservableObject {
