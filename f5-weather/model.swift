@@ -61,7 +61,7 @@ class AppModel: ObservableObject {
              let data = data,
              let res = String(data: data, encoding: .utf8) {
                 DispatchQueue.main.async {
-                  
+                    
                   let lines = res.split(whereSeparator: \.isNewline) // convert the String response to lines
                   
                   self.forecast = lines.map { line in // process JSON in each line
@@ -96,10 +96,11 @@ class AppModel: ObservableObject {
         task.resume()
       
       } else {
-        self.showAlert = true
-        self.alertMessage = "URL error"
         logger.info("URL Error")
-        return
+        DispatchQueue.main.async {
+          self.showAlert = true
+          self.alertMessage = "URL error"
+        }
       } // URL
     } // urlString
   } // getForecast()
