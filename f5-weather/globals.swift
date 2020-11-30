@@ -18,6 +18,8 @@ let MIN_ROWS: Int = 10
 let MAX_ROWS: Int = 20
 let INSETS: Int = 4 + 4 // top + bottom of each view
 
+let ROW_HEIGHT_WITH_INSETS: Int = ROW_HEIGHT + INSETS
+
 // width of a char (not great to hardcode this)
 let CHAR_WIDTH: CGFloat = 12
 

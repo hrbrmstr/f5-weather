@@ -84,7 +84,7 @@ struct DayView: View {
 }
 
 // MARK: The main view/window
-
+// dynamically resize window based on the number of forecast day lines we have
 struct ContentView: View {
   
   @EnvironmentObject var model: AppModel // set in f5wxApp.swift
@@ -93,12 +93,17 @@ struct ContentView: View {
     
     GeometryReader { g in // greedy view in the event we want to do more complex things
       VStack {
-        List { // list view for each day forecast
-          ForEach(model.forecast) {
-            (day) in DayView(dayCast: day, minTemp: model.minTemp, maxTemp: model.maxTemp)
-          }
+        ForEach(model.forecast) {
+          (day) in DayView(dayCast: day, minTemp: model.minTemp, maxTemp: model.maxTemp)
+            .frame(
+              minWidth: 0,
+              maxWidth: .infinity,
+              minHeight: 0,
+              maxHeight: .infinity,
+              alignment: .topLeading
+            )
         }
-      }
+      }.padding()
     }
     .onReceive(NotificationCenter.default.publisher(for: NSApplication.willBecomeActiveNotification)) { _ in
       model.getForecast()
@@ -107,9 +112,9 @@ struct ContentView: View {
       minWidth: VIEW_WIDTH,
       idealWidth: VIEW_WIDTH,
       maxWidth: VIEW_WIDTH,
-      minHeight: VIEW_MIN_HEIGHT,
-      idealHeight: CGFloat((model.forecast.count > 0 ? model.forecast.count : MIN_ROWS) * (ROW_HEIGHT + INSETS) + 2*INSETS), // dynamically resize window based on the number of forecast day lines we have
-      maxHeight: CGFloat(MAX_ROWS * (ROW_HEIGHT + INSETS) + 2*INSETS)
+      minHeight: model.height(),
+      idealHeight: model.height(),
+      maxHeight: model.height()
     )
     .alert(
       isPresented: $model.showAlert,

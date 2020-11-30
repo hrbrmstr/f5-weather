@@ -25,11 +25,28 @@ class AppModel: ObservableObject {
   @Published var showAlert: Bool = false // in case there are errors
   @Published var alertMessage: String = ""
   
+  var lastGrab : Date?
+  
   init() {
     getForecast() // get the forecast right away
   }
   
-  func getForecast() {
+  func height() -> CGFloat {
+    let nRows = forecast.count > 0 ? forecast.count : MIN_ROWS
+    return(CGFloat(Double((nRows * ROW_HEIGHT_WITH_INSETS)) + (2*Double(INSETS))))
+  }
+  
+  func getForecast(force: Bool = false) {
+    
+    if (!force) {
+      if let g = lastGrab {
+        if (g.timeIntervalSinceNow < 60*60)  { return }
+      } else {
+        lastGrab = Date()
+        minTemp = Double.infinity
+        maxTemp = -Double.infinity
+      }
+    }
     
     if let urlBaseString = Bundle.main.object(forInfoDictionaryKey: "ForecastURL") as? String {
       
